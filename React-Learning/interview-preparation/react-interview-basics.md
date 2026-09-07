@@ -62,5 +62,25 @@ if (login) {
 {isAdmin && <button>Admin Panel</button>}
 ```
 
+## What are props in React?
+**Answer:** Props are read-only inputs used to pass data from a parent component to a child component. They make components reusable because we can pass different values to the same child component.
+
+**Example:**
+```jsx
+function App() {
+  return <Student name="Syed" skill="React" />;
+}
+
+function Student(props) {
+  return <h1>{props.name} - {props.skill}</h1>;
+}
+```
+
+## Can a child component modify props directly?
+**Answer:** No. Props are read-only. The parent provides the values, and the child reads them.
+
+## Props vs State
+**Answer:** Props are read-only data passed into a component, usually from parent to child. State is data managed inside a component that can change over time.
+
 ## Interview Tip
 Keep answers short first. Give a small example if the interviewer asks for more detail.
