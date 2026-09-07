@@ -1,7 +1,7 @@
 # Day 2 — React Level 2
 
 ## Status
-**In Progress — Conditional Rendering completed ✓**
+**In Progress — Conditional Rendering + Props completed ✓**
 
 ## Course Section
 React Level 2
@@ -10,6 +10,7 @@ React Level 2
 1. Conditional Rendering with `if/else` ✓
 2. Conditional Rendering with ternary operator `? :` ✓
 3. Conditional Rendering with logical `&&` operator ✓
+4. Props ✓
 
 ## Conditional Rendering
 
@@ -45,44 +46,87 @@ return (
 );
 ```
 
-### Syntax
-```jsx
-condition ? trueResult : falseResult
-```
-
 ### Method 3 — Logical `&&` Operator
 Use `&&` when UI should render only when a condition is true.
 
-### Practice Completed
-```jsx
-function ConditionalRendering() {
-  let login = true;
+## Props
 
-  return <>
-    {login && <h1 className="btn btn-success">success</h1>}
-  </>;
-}
+### English Definition
+Props (Properties) are read-only inputs used to pass data from a parent component to a child component.
 
-export default ConditionalRendering;
-```
+### Hindi Definition
+Props ka use parent component se child component ko data pass karne ke liye hota hai.
 
 ### Simple Explanation
-`login && <h1>...</h1>` means: if `login` is true, React renders the `<h1>`. If `login` is false, the JSX element is not rendered.
+Parent component data bhejta hai, aur child component `props` ke through data receive karke use karta hai.
+
+**Flow:** Parent → Child
+
+### Syntax
+```jsx
+<Student name="Syed" skills="React" />
+
+function Student(props) {
+  return <h1>{props.name}</h1>;
+}
+```
+
+### Practice Completed
+```jsx
+function ExampleForProp() {
+  return (
+    <div className="container mt-4">
+      <h1 className="h4 mb-3">
+        Prop is a read-only input used to pass data from parent to child.
+      </h1>
+
+      <Student name="syed" skills="html" />
+      <Student name="adil" skills="css" />
+      <Student name="syed adil" skills="js" />
+      <Student name="syed adil ali" skills="typescript" />
+      <Student name="ali syed" skills="react" />
+    </div>
+  );
+}
+
+function Student(props) {
+  return (
+    <table className="table table-bordered mb-3">
+      <thead className="table-dark">
+        <tr>
+          <th>Student Name</th>
+          <th>Skills</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr className="table-primary">
+          <td>{props.name}</td>
+          <td>{props.skills}</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
+export default ExampleForProp;
+```
 
 ### Important Points
-- `if/else` can be used before returning JSX.
-- Ternary `? :` is useful when there are two UI outcomes.
-- `&&` is useful when an element should render only when a condition is true.
-- Ternary and `&&` are JavaScript expressions that can be used inside JSX with `{}`.
+- Props means Properties.
+- Props are passed from parent to child.
+- Props are read-only.
+- The same child component can be reused with different values.
+- Props can be accessed using `props.name`, `props.skills`, etc.
+- Props destructuring can make the child component code shorter.
 
-## Interview Questions
-**Q: What is conditional rendering in React?**
+### Interview Question
+**Q: What are props in React?**
 
-**Interview-ready answer:** Conditional rendering means displaying different UI based on a condition. In React, we can use `if/else`, the ternary operator, or the logical `&&` operator.
+**Interview-ready answer:** Props are read-only inputs used to pass data from a parent component to a child component. They make components reusable because we can pass different values to the same child component.
 
-**Q: What is the `&&` operator used for in JSX?**
+**Q: Can a child component modify props directly?**
 
-**Interview-ready answer:** The logical `&&` operator is commonly used to render an element only when a condition is true. If the condition is false, the element is not rendered.
+**Interview-ready answer:** No. Props are read-only. If data needs to change, the parent can provide new props or state can be used for changing data.
 
 ## Next
-Props → continue React Level 2.
+CSS Modules → continue React Level 2.
