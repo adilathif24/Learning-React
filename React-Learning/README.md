@@ -2,15 +2,43 @@
 
 My job-focused React learning repository.
 
+## Full Course Roadmap
+
+The complete roadmap is maintained in **[Full Course Mindmap](./full-course-mindmap.md)** based on the selected React & Redux course sequence.
+
 ## Folder Structure
 
-- `important-topics/` — each important topic gets its own file with definition, Hindi meaning, explanation, example and interview question.
+- `full-course-mindmap.md` — complete course roadmap with definitions, Hindi explanations, examples, important points and interview focus.
+- `important-topics/` — topic-wise notes.
 - `important-questions/` — important React questions and answers.
-- `interview-preparation/` — separate interview preparation with topic definition, explanation, examples and ready-to-speak answers.
-- `daily-learning/` — day-by-day learning record, practice and progress.
-- `projects/` — only projects I choose to keep as part of my React learning record.
+- `interview-preparation/` — interview-ready preparation.
+- `daily-learning/` — day-by-day learning record.
+- `projects/` — projects I build and choose to keep in my React learning record.
 
-## Day 1 Topics
+## Daily Learning Format
+
+**Every Day will follow the same format:**
+
+1. Topics completed
+2. English definition
+3. Hindi definition / explanation
+4. Simple concept explanation
+5. Syntax / code
+6. Practical examples
+7. Important points
+8. Questions and answers
+9. Interview questions
+10. Interview-ready answers
+11. Practice tasks
+12. Project/practice work completed
+13. Local app link when applicable
+14. Next course topic
+
+Nothing will be marked complete until I understand it and practice it.
+
+## Day 1 — React Foundation
+
+Completed topics:
 
 - What is React
 - Why React
@@ -23,14 +51,14 @@ My job-focused React learning repository.
 - JSX Rules
 - JavaScript Inside JSX
 - Components
-- Functional Component
+- Functional Components
 - Class vs Function Components
 - Reusable Components
 - Import / Export
 - Fragment
 - Bootstrap
 
-## Day 1 Practice
+Practice:
 
 - Function component
 - JSX
@@ -38,30 +66,14 @@ My job-focused React learning repository.
 - Reusable Button used three times
 - Bootstrap `btn btn-primary`
 - Class component
-- Student Profile own project
+- Student Profile Card own project
 
-## Local Practice
+Local practice app: `http://localhost:5175/`
 
-http://localhost:5175/
+## Learning Record
 
-## Important Rule For This Repository
+This repository is maintained as my personal React learning record. Every new day will be added using the same detailed format, while following the course sequence.
 
-This is my learning record. New React topics should be added to all relevant sections: topic notes, important questions, interview preparation and the current daily-learning file.
+**Current Status:** Day 1 — React Foundation: COMPLETED ✓
 
-Each topic should contain:
-
-1. Definition
-2. Hindi explanation
-3. Simple explanation
-4. Syntax / code
-5. Example
-6. Important points
-7. Interview question
-8. Interview-ready answer
-9. Practice when applicable
-
-## Current Status
-
-**Day 1 — React Foundation: COMPLETED ✓**
-
-**Next:** React Level 2 → `map()` → Conditional Rendering.
+**Next:** React Level 2 → `map()` → Conditional Rendering → Props → CSS Modules.
