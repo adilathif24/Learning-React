@@ -70,10 +70,22 @@ Practice:
 
 Local practice app: `http://localhost:5175/`
 
-## Learning Record
+## Day 2 — React Level 2
 
-This repository is maintained as my personal React learning record. Every new day will be added using the same detailed format, while following the course sequence.
+Completed topics:
 
-**Current Status:** Day 1 — React Foundation: COMPLETED ✓
+- Conditional Rendering with `if/else`
+- Conditional Rendering with ternary `? :`
+- Conditional Rendering with logical `&&`
+- Props — parent to child data passing
 
-**Next:** React Level 2 → `map()` → Conditional Rendering → Props → CSS Modules.
+Props practice completed:
+
+- Reused the `Student` component multiple times.
+- Passed different `name` and `skills` props.
+- Displayed props inside the child component.
+- Used Bootstrap table classes for the practice UI.
+
+**Current Status:** Day 2 — React Level 2: Props COMPLETED ✓
+
+**Next:** CSS Modules → continue React Level 2.
