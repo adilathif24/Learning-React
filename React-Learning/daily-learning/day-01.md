@@ -65,8 +65,5 @@ http://localhost:5175/
 - Bootstrap classes
 - Class component with `extends React.Component` and `render()`
 
-## Removed From Day 1 Record
-Todo App Version 1 is not included in the Day 1 project list.
-
 ## Next
 Continue with the selected course sequence: React Level 2 → rendering lists with `map()` → conditional rendering.
