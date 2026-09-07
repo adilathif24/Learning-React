@@ -1,4 +1,4 @@
-# git.test — Learning React
+# LEARNING REACT
 
 This repository contains my React learning journey, practice work, important concepts, interview preparation, questions, and projects.
 
