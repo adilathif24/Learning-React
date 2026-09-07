@@ -1,40 +1,67 @@
 # React Learning
 
-Job-focused React learning repository.
+My job-focused React learning repository.
 
-## Structure
+## Folder Structure
 
-- `important-topics/` — topic-wise definitions, explanations, examples, and key points
-- `important-questions/` — important/interview questions
-- `interview-preparation/` — interview-ready definitions, examples, explanations, and answers
-- `daily-learning/` — daily progress and practice
-- `projects/` — React projects and course projects
+- `important-topics/` — each important topic gets its own file with definition, Hindi meaning, explanation, example and interview question.
+- `important-questions/` — important React questions and answers.
+- `interview-preparation/` — separate interview preparation with topic definition, explanation, examples and ready-to-speak answers.
+- `daily-learning/` — day-by-day learning record, practice and progress.
+- `projects/` — only projects I choose to keep as part of my React learning record.
 
-## Topics Learned So Far
+## Day 1 Topics
 
-- React basics
+- What is React
 - Why React
-- React setup with Vite
-- Project structure
-- JSX and JSX rules
-- JavaScript expressions in JSX
-- Functional components
-- Class components
-- Reusable components
-- Import and Export
-- Fragments
-- Bootstrap basics
-- Rendering lists with `map()`
-- Conditional Rendering (currently learning)
+- React vs HTML / CSS / JavaScript
+- React Setup + Vite
+- Project Structure
+- `main.jsx`
+- `index.html`
+- JSX
+- JSX Rules
+- JavaScript Inside JSX
+- Components
+- Functional Component
+- Class vs Function Components
+- Reusable Components
+- Import / Export
+- Fragment
+- Bootstrap
 
-## Workflow
+## Day 1 Practice
 
-As new React topics are learned, add the topic to the appropriate folders with:
+- Function component
+- JSX
+- Dynamic name using `{name}`
+- Reusable Button used three times
+- Bootstrap `btn btn-primary`
+- Class component
+- Student Profile own project
+
+## Local Practice
+
+http://localhost:5175/
+
+## Important Rule For This Repository
+
+This is my learning record. New React topics should be added to all relevant sections: topic notes, important questions, interview preparation and the current daily-learning file.
+
+Each topic should contain:
 
 1. Definition
-2. Explanation
-3. Syntax
-4. Examples
-5. Practice
-6. Interview questions
-7. Interview-ready answer
+2. Hindi explanation
+3. Simple explanation
+4. Syntax / code
+5. Example
+6. Important points
+7. Interview question
+8. Interview-ready answer
+9. Practice when applicable
+
+## Current Status
+
+**Day 1 — React Foundation: COMPLETED ✓**
+
+**Next:** React Level 2 → `map()` → Conditional Rendering.
