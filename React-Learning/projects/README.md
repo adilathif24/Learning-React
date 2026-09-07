@@ -1,11 +1,32 @@
 # React Projects
 
+This folder contains the React projects I build while learning and practicing React. Each project is focused on applying the concepts I have learned and improving my frontend development skills.
+
 ## Completed / Practiced
 
-- Student Profile — my own project using function components, JSX, Bootstrap and import/export.
+### Student Profile Card
 
-## Excluded
+A personal React practice project created to apply my React fundamentals in a small, reusable UI.
 
-- Todo App Version 1 — removed from this React Learning project record as requested.
+**Concepts used:**
+- React function components
+- JSX
+- JavaScript expressions inside JSX
+- Reusable components
+- Import / Export
+- Bootstrap classes
+- Responsive card-based UI
 
-More React projects will be added as they are completed.
+**Project features:**
+- Student profile information
+- Frontend developer title
+- Skills section
+- Education section
+- Bootstrap styling
+- Reusable React component structure
+
+This project was built as my own practice project using the React concepts I learned during Day 1.
+
+## Upcoming Projects
+
+More React projects will be added as I complete them while progressing through the React learning roadmap.
