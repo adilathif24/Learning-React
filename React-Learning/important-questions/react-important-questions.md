@@ -18,3 +18,13 @@
 16. What is conditional rendering?
 17. What is the ternary operator in JSX?
 18. What is the `&&` operator used for in JSX?
+
+## Conditional Rendering — Interview Notes
+
+**Q: What is conditional rendering in React?**
+
+**Answer:** Conditional rendering means displaying different UI based on a condition. React supports patterns such as `if/else`, ternary `? :`, and logical `&&`.
+
+**Q: How does the ternary operator work in JSX?**
+
+**Answer:** It checks a condition and renders one expression if true and another if false: `condition ? trueResult : falseResult`.
