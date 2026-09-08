@@ -1,7 +1,7 @@
 # Day 2 — React Level 2
 
 ## Status
-**In Progress — Conditional Rendering + Props completed ✓**
+**In Progress — Conditional Rendering + Props + State/useState completed ✓**
 
 ## Course Section
 React Level 2
@@ -11,6 +11,7 @@ React Level 2
 2. Conditional Rendering with ternary operator `? :` ✓
 3. Conditional Rendering with logical `&&` operator ✓
 4. Props ✓
+5. State + `useState` Hook ✓
 
 ## Conditional Rendering
 
@@ -76,10 +77,6 @@ function Student(props) {
 function ExampleForProp() {
   return (
     <div className="container mt-4">
-      <h1 className="h4 mb-3">
-        Prop is a read-only input used to pass data from parent to child.
-      </h1>
-
       <Student name="syed" skills="html" />
       <Student name="adil" skills="css" />
       <Student name="syed adil" skills="js" />
@@ -92,14 +89,8 @@ function ExampleForProp() {
 function Student(props) {
   return (
     <table className="table table-bordered mb-3">
-      <thead className="table-dark">
-        <tr>
-          <th>Student Name</th>
-          <th>Skills</th>
-        </tr>
-      </thead>
       <tbody>
-        <tr className="table-primary">
+        <tr>
           <td>{props.name}</td>
           <td>{props.skills}</td>
         </tr>
@@ -117,16 +108,66 @@ export default ExampleForProp;
 - Props are read-only.
 - The same child component can be reused with different values.
 - Props can be accessed using `props.name`, `props.skills`, etc.
-- Props destructuring can make the child component code shorter.
 
 ### Interview Question
 **Q: What are props in React?**
 
 **Interview-ready answer:** Props are read-only inputs used to pass data from a parent component to a child component. They make components reusable because we can pass different values to the same child component.
 
-**Q: Can a child component modify props directly?**
+## State + useState
 
-**Interview-ready answer:** No. Props are read-only. If data needs to change, the parent can provide new props or state can be used for changing data.
+### English Definition
+State is data that belongs to a component and can change over time. `useState` is a React Hook used to create and update state in functional components.
+
+### Hindi Definition
+State component ka changeable data hota hai. `useState` Hook ka use functional component mein state create aur update karne ke liye hota hai.
+
+### Syntax
+```jsx
+const [count, setCount] = useState(0);
+```
+
+- `count` → current state value
+- `setCount` → state update function
+- `0` → initial value
+
+### Practice Completed — Counter
+```jsx
+function AnswerForPractice() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <h1>Count: {count}</h1>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+
+      <button onClick={() => setCount(count - 1)}>
+        Decrease
+      </button>
+
+      <button onClick={() => setCount(0)}>
+        Reset
+      </button>
+    </>
+  );
+}
+```
+
+### Important Points
+- `useState` is used inside functional components.
+- State can change over time.
+- Do not directly modify state.
+- Use the setter function to update state.
+- State updates cause React to re-render the component.
+- One component can have multiple state values.
+
+### Interview Question
+**Q: What is `useState` in React?**
+
+**Interview-ready answer:** `useState` is a React Hook that allows functional components to manage state. It returns the current state value and a setter function. When the state is updated using the setter, React re-renders the component.
 
 ## Next
-CSS Modules → continue React Level 2.
+CSS Modules / continue React Level 2.
