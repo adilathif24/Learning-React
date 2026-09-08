@@ -8,20 +8,20 @@ The complete roadmap is maintained in **[Full Course Mindmap](./full-course-mind
 
 ## Folder Structure
 
-- `full-course-mindmap.md` — complete course roadmap with definitions, Hindi explanations, examples, important points and interview focus.
+- `full-course-mindmap.md` — complete course roadmap.
 - `important-topics/` — topic-wise notes.
 - `important-questions/` — important React questions and answers.
 - `interview-preparation/` — interview-ready preparation.
-- `daily-learning/` — day-by-day learning record.
-- `projects/` — projects I build and choose to keep in my React learning record.
+- `daily-learning/` — day-by-day learning record and roadmaps.
+- `projects/` — projects I build and keep in my React learning record.
 
 ## Daily Learning Format
 
-**Every Day will follow the same format:**
+Every Day follows the same format:
 
 1. Topics completed
 2. English definition
-3. Hindi definition / explanation
+3. Hindi explanation
 4. Simple concept explanation
 5. Syntax / code
 6. Practical examples
@@ -34,12 +34,11 @@ The complete roadmap is maintained in **[Full Course Mindmap](./full-course-mind
 13. Local app link when applicable
 14. Next course topic
 
-Nothing will be marked complete until I understand it and practice it.
+Nothing is marked complete until I understand it and practice it.
 
-## Day 1 — React Foundation
+## Day 1 — React Foundation ✓
 
-Completed topics:
-
+Completed:
 - What is React
 - Why React
 - React vs HTML / CSS / JavaScript
@@ -47,45 +46,49 @@ Completed topics:
 - Project Structure
 - `main.jsx`
 - `index.html`
-- JSX
-- JSX Rules
+- JSX + JSX Rules
 - JavaScript Inside JSX
-- Components
-- Functional Components
+- Components + Functional Components
 - Class vs Function Components
 - Reusable Components
 - Import / Export
 - Fragment
 - Bootstrap
 
-Practice:
-
+Practice completed:
 - Function component
 - JSX
 - Dynamic name using `{name}`
 - Reusable Button used three times
 - Bootstrap `btn btn-primary`
 - Class component
-- Student Profile Card own project
+- Student Profile Card
 
-Local practice app: `http://localhost:5175/`
+## Day 2 — React Level 2 ✓
 
-## Day 2 — React Level 2
+**Status: COMPLETED — Conditional Rendering + Props + State/useState**
 
-Completed topics:
-
+Completed:
 - Conditional Rendering with `if/else`
 - Conditional Rendering with ternary `? :`
 - Conditional Rendering with logical `&&`
-- Props — parent to child data passing
+- Props — Parent → Child data passing
+- State
+- `useState` Hook
+- Practice Questions + Answers
+- Interview Questions + Ready Answers
 
-Props practice completed:
+Practice completed:
+- Conditional rendering examples
+- Reused `Student` component with different props
+- Counter with Increase / Decrease / Reset using one `useState`
 
-- Reused the `Student` component multiple times.
-- Passed different `name` and `skills` props.
-- Displayed props inside the child component.
-- Used Bootstrap table classes for the practice UI.
+Day-2 roadmap:
+`daily-learning/day-02-roadmap.md`
 
-**Current Status:** Day 2 — React Level 2: Props COMPLETED ✓
+Day-2 daily record:
+`daily-learning/day-02.md`
 
-**Next:** CSS Modules → continue React Level 2.
+## Day 3
+
+**Next:** Continue the React course sequence.
