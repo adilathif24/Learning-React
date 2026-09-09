@@ -1,4 +1,4 @@
-# Day 2 — Important React Questions
+# Day 2 + Day 3 — Important React Questions
 
 ## Conditional Rendering
 
@@ -43,3 +43,29 @@
 
 **Q12. What is the difference between Props and State?**  
 **Answer:** Props are read-only data passed from a parent to a child, while State is data managed inside a component that can change over time.
+
+## Day 3 — Event Handling
+
+**Q13. What is Event Handling in React?**  
+**Answer:** Event Handling means responding to user actions such as clicks, typing, and form submission.
+
+**Q14. What is `onClick`?**  
+**Answer:** `onClick` is a React event handler used to respond to click events.
+
+**Q15. What is `onChange`?**  
+**Answer:** `onChange` is commonly used with form inputs to respond when their value changes.
+
+**Q16. What is the Event Object?**  
+**Answer:** The event object contains information about the event and the element that triggered it.
+
+**Q17. What is `event.target.value`?**  
+**Answer:** It gives the current value of the input element that triggered the event.
+
+**Q18. How do Event Handling and State work together?**  
+**Answer:** A user event can call a state setter, changing state and causing React to re-render the UI with the updated value.
+
+**Q19. What is an inline event handler?**  
+**Answer:** An event handler written directly inside JSX, for example `onClick={() => alert("Hello")}`.
+
+**Q20. Why should `onClick={handleClick}` usually be used instead of `onClick={handleClick()}`?**  
+**Answer:** `onClick={handleClick}` passes the function for React to call when the event occurs. `handleClick()` calls it immediately during rendering.
