@@ -4,35 +4,53 @@
 
 ### Event Handling — In Progress
 
-Event Handling means responding to actions performed by the user in a React application.
+## 1. Event Handling — Definition
 
-### Concepts covered so far
+**English:** Event Handling means responding to actions performed by the user in a React application, such as clicking, typing, or submitting a form.
 
-- `onClick`
-- Event handler functions
-- Inline event handlers
-- Event Handling + `useState`
-- `onChange`
-- Event object
-- `event.target.value`
-- Conditional UI based on state
-- Controlled input concept
+**Hindi:** Event Handling ka matlab hai user ke actions ko handle karna, jaise button click, input mein typing, ya form submit.
 
-## 1. onClick
+```text
+User Action
+    ↓
+React Event
+    ↓
+Event Handler
+    ↓
+Function
+    ↓
+UI / State changes
+```
 
-React uses `onClick` to respond to button clicks.
+## 2. onClick
+
+**Definition:** `onClick` is a React event handler used to execute a function when a user clicks an element.
+
+### Basic code
 
 ```jsx
 function handleClick() {
     alert("Button clicked!");
 }
 
-<button onClick={handleClick}>Click Me</button>
+function App() {
+    return (
+        <button onClick={handleClick}>
+            Click Me
+        </button>
+    );
+}
+
+export default App;
 ```
 
-### Real-world example
+### Real-world example — Add to Cart
 
-An e-commerce application can use `onClick` for an **Add to Cart** button.
+```jsx
+<button onClick={addToCart}>
+    Add to Cart
+</button>
+```
 
 ```text
 User clicks Add to Cart
@@ -46,7 +64,9 @@ Cart state changes
 UI updates
 ```
 
-## 2. Inline Event Handler
+## 3. Inline Event Handler
+
+**Definition:** An inline event handler is an event function written directly inside JSX.
 
 ```jsx
 <button onClick={() => alert("Button is clicked")}>
@@ -56,9 +76,39 @@ UI updates
 
 Useful for small actions.
 
-## 3. Event Handling + useState
+## 4. Event Handler Function
 
-### Hands-on: Like Button
+**Definition:** A function that is executed when a React event occurs is called an event handler.
+
+```jsx
+function handleClick() {
+    alert("Button clicked!");
+}
+
+<button onClick={handleClick}>Click Me</button>
+```
+
+### Important
+
+Correct:
+
+```jsx
+onClick={handleClick}
+```
+
+Usually wrong for event registration:
+
+```jsx
+onClick={handleClick()}
+```
+
+`handleClick()` calls the function immediately during rendering instead of passing the function for the click event.
+
+## 5. Event Handling + useState
+
+**Definition:** An event can call a state setter to update component data and cause the UI to update.
+
+### Hands-on — Like Button
 
 ```jsx
 import { useState } from "react";
@@ -76,43 +126,101 @@ function Task() {
 export default Task;
 ```
 
-### Real-world use
-
-Like counters, notification counts, cart quantities, unread messages, and similar UI counters use this pattern.
-
-## 4. onChange
-
-`onChange` responds when an input value changes.
+### User's improved practice
 
 ```jsx
-function handleChange(event) {
-    console.log(event.target.value);
-}
-
-<input type="text" onChange={handleChange} />
-```
-
-## 5. Event Object
-
-React passes an event object to the handler.
-
-```jsx
-function handleChange(event) {
-    console.log(event.target.value);
-}
-```
-
-- `event` → event information
-- `event.target` → element that triggered the event
-- `event.target.value` → current input value
-
-## 6. Hands-on: Live Name Input
-
-```jsx
-import { useState } from "react";
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Task() {
-    const [name, setName] = useState("");
+    const [likes, setLikes] = useState(0);
+
+    return (
+        <div className="p-4">
+            <button
+                type="button"
+                className="btn btn-primary position-relative"
+                onClick={() => setLikes(likes + 1)}
+            >
+                ❤️ Likes
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {likes > 99 ? '99+' : likes}
+                    <span className="visually-hidden">unread likes</span>
+                </span>
+            </button>
+        </div>
+    );
+}
+
+export default Task;
+```
+
+### Real-world uses
+
+- Social media likes
+- Notification counts
+- Shopping cart quantities
+- Unread message counts
+
+## 6. onChange
+
+**Definition:** `onChange` is a React event handler commonly used with inputs to respond when their value changes.
+
+```jsx
+function handleChange(event) {
+    console.log(event.target.value);
+}
+
+function App() {
+    return (
+        <input
+            type="text"
+            onChange={handleChange}
+        />
+    );
+}
+
+export default App;
+```
+
+### Real-world uses
+
+- Search box
+- Login form
+- Registration form
+- Profile editing
+- Filters
+
+## 7. Event Object
+
+**Definition:** The event object contains information about the event and the element that triggered it.
+
+```jsx
+function handleChange(event) {
+    console.log(event);
+}
+```
+
+Important properties:
+
+```jsx
+event.target
+
+event.target.value
+```
+
+- `event.target` → the element that triggered the event
+- `event.target.value` → the current value of an input
+
+## 8. onChange + useState
+
+### Hands-on — Live Name Input
+
+```jsx
+import { useState } from 'react';
+
+function Task() {
+    const [name, setName] = useState('');
 
     const handler = (event) => {
         setName(event.target.value);
@@ -155,27 +263,83 @@ React re-renders
 Hello Syed
 ```
 
-## Real-world example: Login/Search input
+## 9. Controlled Input
 
-The same `onChange` pattern is used for login forms, search boxes, filters, profile forms, and other interactive inputs.
+**Definition:** A controlled input is a form input whose value is controlled by React state.
 
-## Practice completed
+```jsx
+const [name, setName] = useState('');
 
-### Like Counter
-- [x] `useState`
+<input
+    value={name}
+    onChange={(event) => setName(event.target.value)}
+/>
+```
+
+Here, React state is the source of truth for the input value.
+
+## 10. Conditional UI with Event + State
+
+```jsx
+{name && <h1>Hello {name}</h1>}
+```
+
+When `name` has a value, the greeting is displayed.
+
+This combines:
+
+```text
+Event Handling + State + Conditional Rendering
+```
+
+## 11. Event Handling + State — Real-world example
+
+### Shopping Cart
+
+```jsx
+import { useState } from 'react';
+
+function ShoppingCart() {
+    const [cartItems, setCartItems] = useState(0);
+
+    function addToCart() {
+        setCartItems(cartItems + 1);
+    }
+
+    return (
+        <>
+            <h2>Product: iPhone</h2>
+            <h3>Price: ₹70,000</h3>
+
+            <button onClick={addToCart}>
+                Add to Cart
+            </button>
+
+            <h2>Cart Items: {cartItems}</h2>
+        </>
+    );
+}
+
+export default ShoppingCart;
+```
+
+## What we learned today
+
+- [x] Event Handling definition
 - [x] `onClick`
-- [x] Event handler through inline function
-- [x] State update
-- [x] UI re-render
-- [x] `99+` display logic
-
-### Live Name Input
-- [x] `useState`
+- [x] Event handler function
+- [x] Inline event handler
+- [x] `onClick={handleClick}` vs `onClick={handleClick()}`
+- [x] Event Handling + `useState`
 - [x] `onChange`
 - [x] Event object
+- [x] `event.target`
 - [x] `event.target.value`
-- [x] Conditional rendering
 - [x] Controlled input
+- [x] Conditional UI based on state
+- [x] Like Counter hands-on
+- [x] Live Name Input hands-on
+- [x] Shopping Cart real-world example
 
 ## Next Event Handling topics
 
@@ -183,12 +347,10 @@ The same `onChange` pattern is used for login forms, search boxes, filters, prof
 - Passing arguments to event handlers
 - Other useful React events
 - Event Handling mini-project
-- Interview questions
+- Final interview questions
 
-## Day 3 rule
+## Day 3 learning method
 
-For every concept:
-
-**Concept → Real-world example → Hands-on task → Mini-project → Interview → VS Code → Browser documentation → GitHub**
+**Concept → Definition → Syntax → Real-world example → Hands-on task → Mini-project → Interview → VS Code → Browser documentation → GitHub**
 
 Status: **Event Handling — In Progress**
