@@ -1,81 +1,46 @@
 # Amazon Product Project
 
-A separate React + Bootstrap e-commerce product page built as hands-on practice.
+A premium e-commerce product page built with **React, JavaScript, Vite, Bootstrap and CSS**.
 
-## Public GitHub Project
+## Project Overview
 
-This project is kept in its own folder and is **not part of Day-01, Day-02, or Day-03**.
+A responsive product-shopping interface that demonstrates practical React development through reusable components, state management and user interactions.
 
-[Open Amazon Product Project on GitHub](https://github.com/adilathif24/Learning-React/tree/main/React-Learning/projects/Amazon-Product-Project)
+## Key Features
 
-## Local Website URL
-
-```text
-http://localhost:5178/
-```
-
-### What does `localhost:5178` mean?
-
-- `localhost` = your own computer.
-- `5178` = the port where the Vite development server is running.
-- `/` = the root/home page of this React application.
-- This URL works only while the local Vite server is running.
-
-Start the project with:
-
-```bash
-npm install
-npm run dev
-```
-
-Then open:
-
-```text
-http://localhost:5178/
-```
-
-> The port can change if another Vite app is already using 5178. Always use the URL shown by `npm run dev` in your terminal.
-
-## Project Purpose
-
-This project uses React concepts through a realistic product-shopping experience instead of isolated examples.
-
-## React Concepts Practiced
-
-- `useState`
-- Props
-- Functional components
-- Component-based architecture
-- Event handling
-- Conditional rendering
-- `map()` for product options
-- State-driven UI
-- Cart interaction
-- Reusable components
-
-## Features
-
-- Premium product detail page
-- Product image and gallery area
+- Premium responsive product UI
+- Product image gallery
 - Product information and pricing
 - Size selection: S, M, L, XL
 - Color selection
 - Quantity controls
 - Payment method selection
-- Add to Cart
-- Buy Now
+- Add to Cart and Buy Now
 - Order summary
-- Cart section
+- Cart management
 - Responsive Bootstrap layout
-- Custom premium CSS styling
+- Custom CSS styling
+
+## React Skills Demonstrated
+
+- `useState` for product and cart state
+- Props for parent-to-child data flow
+- Functional components
+- Reusable component architecture
+- Event handling
+- Conditional rendering
+- `map()` for dynamic options
+- State-driven UI updates
 
 ## Tech Stack
 
-- React
-- JavaScript
-- Vite
-- Bootstrap
-- CSS
+| Technology | Usage |
+|---|---|
+| React | UI and component architecture |
+| JavaScript | Application logic and state |
+| Vite | Development and build tooling |
+| Bootstrap | Responsive layout and UI |
+| CSS | Custom premium styling |
 
 ## Project Structure
 
@@ -100,9 +65,7 @@ Amazon-Product-Project/
 └── vite.config.js
 ```
 
-## Main React Code
-
-The main application keeps the product state in `App.jsx` and passes state/data to reusable child components through props.
+## State Management Example
 
 ```jsx
 const [size, setSize] = useState("M");
@@ -110,7 +73,11 @@ const [color, setColor] = useState("Black");
 const [quantity, setQuantity] = useState(1);
 const [payment, setPayment] = useState("Cash on Delivery");
 const [cart, setCart] = useState([]);
+```
 
+## Cart Logic
+
+```jsx
 const addToCart = () => {
   const product = {
     name: productName,
@@ -125,13 +92,10 @@ const addToCart = () => {
 };
 ```
 
-### Component + Props Example
+## Component Communication
 
 ```jsx
-<ProductInfo
-  name={productName}
-  price={productPrice}
-/>
+<ProductInfo name={productName} price={productPrice} />
 
 <SizeSelector
   size={size}
@@ -142,25 +106,26 @@ const addToCart = () => {
   color={color}
   setColor={setColor}
 />
-```
 
-### Quantity Example
-
-```jsx
 <QuantityControl
   quantity={quantity}
   setQuantity={setQuantity}
 />
 ```
 
-The parent component owns the state, while child components receive the current value and setter function through props.
+The parent component manages the application state and passes values and setter functions to reusable child components through props.
 
-## Learning Outcome
+## Run Locally
 
-This project connects the React concepts learned so far into one practical application:
+```bash
+npm install
+npm run dev
+```
 
-`useState` + `Props` + `Events` + `map()` + `Conditional Rendering` + `Reusable Components` + `Cart State`
+The Vite terminal output provides the local development URL.
 
-## Important
+## Project Status
 
-This is a learning/portfolio project and is not affiliated with Amazon.
+**Completed — React Front-End Project**
+
+This project is maintained as a standalone portfolio project inside the React learning repository.
