@@ -1,34 +1,89 @@
-# Day 3 — Event Handling Interview Preparation
+# Day 4 — Event Handling: Forms & Form Submission — Interview Preparation
 
-## Event Handling
+## Form Submission
 
-**Q: What is Event Handling in React?**  
-**Interview Answer:** Event Handling means responding to user actions such as clicks, typing, and form submission. React provides event handler props such as `onClick`, `onChange`, and `onSubmit`.
+**Q: What is `onSubmit` in React?**  
+**Interview Answer:** `onSubmit` is a React event handler used to execute a function when a form is submitted.
 
-**Q: What is `onClick`?**  
-**Interview Answer:** `onClick` is a React event handler used to execute a function when a user clicks an element.
+**Q: Why do we use `event.preventDefault()` in a React form?**  
+**Interview Answer:** It prevents the browser's default form submission behavior, such as reloading the page, so React can handle the submission logic.
 
-**Q: What is `onChange`?**  
-**Interview Answer:** `onChange` is commonly used with form inputs to respond when the input value changes.
+**Q: How do you handle form submission in React?**  
+**Interview Answer:** Attach a handler function to the form's `onSubmit` event, call `event.preventDefault()`, then validate or process the form data.
 
-**Q: What is the event object?**  
-**Interview Answer:** The event object contains information about the event and the element that triggered it. For inputs, `event.target.value` can be used to read the current value.
+## Controlled Inputs
 
-**Q: How do you pass an argument to an event handler?**  
-**Interview Answer:** Wrap the function call in an arrow function, for example `onClick={() => buyProduct("iPhone")}`.
+**Q: What is a controlled input?**  
+**Interview Answer:** A controlled input is a form input whose value is managed by React state and updated through an event such as `onChange`.
 
-**Q: What is the difference between `onClick={handleClick}` and `onClick={handleClick()}`?**  
-**Interview Answer:** `onClick={handleClick}` passes the function to React to execute when the event occurs. `onClick={handleClick()}` calls the function immediately during rendering.
+**Q: What does `event.target.value` do?**  
+**Interview Answer:** It reads the current value of the form element that triggered the event.
 
-**Q: How do Event Handling and State work together?**  
-**Interview Answer:** An event handler can call a state setter. The state update changes component data and React re-renders the UI with the new value.
+**Q: How does `onChange` work with controlled inputs?**  
+**Interview Answer:** `onChange` runs when the input value changes and can use `event.target.value` to update React state through a state setter.
 
-## Practical examples covered
+**Q: Why can `Number()` be useful with an input of type number?**  
+**Interview Answer:** The input value received through `event.target.value` is a string, so `Number()` can convert it to a numeric value before calculations.
 
-- Like counter using `onClick` + `useState`
-- Live name input using `onChange` + `event.target.value`
-- Conditional greeting based on input state
+## Practical Questions
+
+**Q: How do you connect form submission with state?**  
+**Interview Answer:** Store input values in state using controlled inputs, then read those state values inside the `onSubmit` handler to validate, process, calculate, or send the data.
+
+**Q: How would you handle a registration form in React?**  
+**Interview Answer:** I would use controlled inputs for name, email, and password, update state with `onChange`, prevent the default submission with `preventDefault()`, and process the form data inside `onSubmit`.
+
+**Q: How would you show a success message after form submission?**  
+**Interview Answer:** I would store a submitted or success flag in state and conditionally render the success message after the form is successfully submitted.
+
+**Q: How would you calculate a product order total from a form?**  
+**Interview Answer:** I would store the quantity in state, convert the input value to a number using `Number()`, multiply it by the product price, and store the resulting order data in state.
+
+## Key Flow
+
+```text
+User enters data
+      ↓
+onChange
+      ↓
+event.target.value
+      ↓
+setState()
+      ↓
+React state
+      ↓
+User submits form
+      ↓
+onSubmit
+      ↓
+preventDefault()
+      ↓
+Read / validate state
+      ↓
+Process / calculate
+      ↓
+setState()
+      ↓
+Conditional UI update
+```
+
+## Day 4 Skills Demonstrated
+
+- `onSubmit`
+- `event.preventDefault()`
+- `useState`
+- `onChange`
+- `event.target.value`
+- Controlled inputs
+- Form submission
+- Registration Form
+- Contact Form
+- Login Form
+- Product Order Form
+- `Number()` conversion
+- Conditional rendering
+- Bootstrap form UI
 
 ## Status
 
-🔄 Event Handling is still in progress. Remaining practice: `onSubmit`, passing arguments, other useful events, and the Event Handling mini-project.
+✅ **Day 4 — COMPLETED**
