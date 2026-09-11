@@ -15,9 +15,9 @@ Learn how React handles form submission and build interactive form-based UI.
 - `onChange`
 - `event.target.value`
 - Passing arguments from form actions
-- Real-world login form
-- Registration form practice
-- Contact form practice
+- Real-world Login Form
+- Registration Form
+- Contact Form
 - Product Order Form mini-project
 - Bootstrap UI styling
 - Interview preparation
@@ -149,6 +149,7 @@ API request or UI update
 
 ## 5. Practice Completed — Registration Form
 
+### Task
 Build a form with:
 
 - Name
@@ -156,10 +157,52 @@ Build a form with:
 - Password
 - Submit button
 
-Requirement completed: prevent page reload and process submitted form values.
+### Completed Code
 
-## 6. Practice — Contact Form
+```jsx
+import { useState } from "react";
 
+function RegistrationForm() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [submittedName, setSubmittedName] = useState("");
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        setSubmittedName(name);
+    }
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder="Name" />
+                <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Email" />
+                <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Password" />
+                <button type="submit">Register</button>
+            </form>
+
+            {submittedName && <h3>Registered Name: {submittedName}</h3>}
+        </>
+    );
+}
+
+export default RegistrationForm;
+```
+
+### What this demonstrates
+
+- Three controlled inputs
+- `onChange`
+- `event.target.value`
+- `onSubmit`
+- `event.preventDefault()`
+- State update after submission
+- Conditional rendering of submitted data
+
+## 6. Practice Completed — Contact Form
+
+### Task
 Build a contact form with:
 
 - Name
@@ -167,9 +210,48 @@ Build a contact form with:
 - Message
 - Submit button
 
-Expected result after submission:
+### Completed Code
 
-`Message sent successfully!`
+```jsx
+import { useState } from "react";
+
+function ContactForm() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        setSubmitted(true);
+    }
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder="Name" />
+                <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Email" />
+                <textarea value={message} onChange={(event) => setMessage(event.target.value)} placeholder="Message" />
+                <button type="submit">Send Message</button>
+            </form>
+
+            {submitted && <p>Message sent successfully!</p>}
+        </>
+    );
+}
+
+export default ContactForm;
+```
+
+### What this demonstrates
+
+- Controlled text input
+- Controlled email input
+- Controlled textarea
+- `onChange`
+- `onSubmit`
+- `preventDefault()`
+- Conditional success message
 
 ## 7. Day 4 Mini-Project — Product Order Form
 
@@ -211,13 +293,7 @@ function onSubmit(event) {
 
 ```jsx
 <form onSubmit={onSubmit}>
-    <input
-        type="number"
-        min="1"
-        value={quantity}
-        onChange={(event) => setQuantity(event.target.value)}
-    />
-
+    <input type="number" min="1" value={quantity} onChange={(event) => setQuantity(event.target.value)} />
     <button type="submit">Add to Cart</button>
 </form>
 ```
@@ -294,8 +370,8 @@ Updated UI
 
 - Login Form
 - Controlled inputs
-- Registration Form
-- Contact Form concept
+- Registration Form — completed with code
+- Contact Form — completed with code
 - Product Order Form mini-project
 - Bootstrap styling
 
