@@ -4,16 +4,22 @@
 
 Learn how React handles form submission and build interactive form-based UI.
 
-## Topics
+## Topics Completed
 
 - `onSubmit`
 - Form submission in React
 - `event.preventDefault()`
 - Reading form values
 - Connecting form submission with state
+- Controlled form inputs
+- `onChange`
+- `event.target.value`
 - Passing arguments from form actions
-- Real-world form examples
-- Practice tasks
+- Real-world login form
+- Registration form practice
+- Contact form practice
+- Product Order Form mini-project
+- Bootstrap UI styling
 - Interview preparation
 
 ## 1. onSubmit
@@ -52,7 +58,36 @@ export default LoginForm;
 ### Hinglish
 Normally browser form submit hone ke baad page reload kar sakta hai. `preventDefault()` us default behavior ko rokta hai, taaki React apni logic execute kar sake.
 
-## 3. Real-World Example — Login Form
+## 3. Controlled Form Inputs
+
+A controlled input gets its current value from React state and updates that state through `onChange`.
+
+```jsx
+const [email, setEmail] = useState("");
+
+<input
+    type="email"
+    value={email}
+    onChange={(event) => setEmail(event.target.value)}
+    placeholder="Email"
+/>
+```
+
+### Key Connection
+
+```text
+User types
+    ↓
+onChange
+    ↓
+event.target.value
+    ↓
+setState()
+    ↓
+React state updated
+```
+
+## 4. Real-World Example — Login Form
 
 A login form can use `onSubmit` to collect user input, validate it, and then send the data to an API.
 
@@ -96,7 +131,7 @@ function LoginForm() {
 export default LoginForm;
 ```
 
-## 🧠 Key Connection
+## 🧠 Key Connection — Form Submission
 
 ```text
 User submits form
@@ -112,9 +147,8 @@ Read / validate state
 API request or UI update
 ```
 
-## 📝 Practice
+## 5. Practice Completed — Registration Form
 
-### Task 1 — Registration Form
 Build a form with:
 
 - Name
@@ -122,9 +156,10 @@ Build a form with:
 - Password
 - Submit button
 
-On submit, prevent page reload and display the submitted name.
+Requirement completed: prevent page reload and process submitted form values.
 
-### Task 2 — Contact Form
+## 6. Practice — Contact Form
+
 Build a contact form with:
 
 - Name
@@ -132,8 +167,98 @@ Build a contact form with:
 - Message
 - Submit button
 
-After submission, display:
+Expected result after submission:
+
 `Message sent successfully!`
+
+## 7. Day 4 Mini-Project — Product Order Form
+
+### Features implemented
+
+- Fixed product name and price
+- Quantity controlled input
+- `useState` for quantity
+- `onChange` for quantity updates
+- `onSubmit` for form submission
+- `event.preventDefault()`
+- `Number()` conversion
+- Total price calculation
+- Selected order stored in state
+- Conditional rendering of order summary
+- Bootstrap responsive card UI
+
+### Core Logic
+
+```jsx
+const [quantity, setQuantity] = useState(1);
+const [selectedItems, setSelectedItems] = useState(null);
+
+function onSubmit(event) {
+    event.preventDefault();
+
+    const computedTotal = Number(quantity) * price;
+
+    setSelectedItems({
+        name,
+        price,
+        quantity: Number(quantity),
+        total: computedTotal,
+    });
+}
+```
+
+### Form Structure
+
+```jsx
+<form onSubmit={onSubmit}>
+    <input
+        type="number"
+        min="1"
+        value={quantity}
+        onChange={(event) => setQuantity(event.target.value)}
+    />
+
+    <button type="submit">Add to Cart</button>
+</form>
+```
+
+### Result
+
+```text
+Product: iPhone
+Quantity: 2
+Total: ₹180,000
+
+Added Successfully ✅
+```
+
+## 🔗 Complete Event + Form Flow
+
+```text
+Input
+  ↓
+onChange
+  ↓
+useState
+  ↓
+User enters data
+  ↓
+Submit
+  ↓
+onSubmit
+  ↓
+event.preventDefault()
+  ↓
+Read state values
+  ↓
+Process / calculate
+  ↓
+setState
+  ↓
+Conditional Rendering
+  ↓
+Updated UI
+```
 
 ## 💼 Interview Questions
 
@@ -149,8 +274,35 @@ After submission, display:
 
 **Interview Answer:** Attach a handler function to the form's `onSubmit` event, call `event.preventDefault()`, then validate or process the form data.
 
-## Status
+### Q4. What is a controlled input?
 
-🔄 Day 4 — In Progress
+**Interview Answer:** A controlled input is a form input whose value is managed by React state and updated through an event such as `onChange`.
 
-Next: practice `onSubmit`, form validation basics, and the Event Handling mini-project.
+### Q5. What does `event.target.value` do?
+
+**Interview Answer:** It reads the current value of the form element that triggered the event.
+
+### Q6. Why can `Number()` be useful with an input of type number?
+
+**Interview Answer:** The input value received through `event.target.value` is a string, so `Number()` can convert it to a numeric value before calculations.
+
+## 🎯 Day 4 Status
+
+✅ **COMPLETED**
+
+### Completed Practice
+
+- Login Form
+- Controlled inputs
+- Registration Form
+- Contact Form concept
+- Product Order Form mini-project
+- Bootstrap styling
+
+### Key Skills Demonstrated
+
+`useState` • `onChange` • `onSubmit` • `event.target.value` • `preventDefault()` • controlled inputs • calculations • conditional rendering • Bootstrap
+
+### Next
+
+Continue with the next React course topic after Event Handling/Form Submission.
