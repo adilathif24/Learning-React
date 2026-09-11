@@ -1,22 +1,46 @@
 # Day 3 — React Event Handling
 
 ## Progress
-### Event Handling — In Progress
+### Event Handling — COMPLETED ✅
 
 ## Learning Method Used
 For every concept:
 1. Definition
-2. Hindi explanation
-3. Code example
-4. Real-world example + solution
-5. Hands-on task + solution
-6. Interview question
+2. Hindi/Hinglish explanation
+3. Syntax + code example
+4. Real-world example
+5. Hands-on practice
+6. Interview point
 
-## 1. Event Handling — Definition
+## Topics Completed
+- [x] Event Handling
+- [x] `onClick`
+- [x] Inline Event Handler
+- [x] Event Handler Function
+- [x] `onClick={handleClick}` vs `onClick={handleClick()}`
+- [x] Event Handling + `useState`
+- [x] `onChange`
+- [x] Event Object
+- [x] `event.target`
+- [x] `event.target.value`
+- [x] Controlled Input
+- [x] Conditional UI with Event + State
+- [x] Mouse Events: `onMouseEnter`, `onMouseLeave`, `onMouseOver`
+- [x] `onSubmit`
+- [x] `event.preventDefault()`
+- [x] Form submission with controlled inputs
+- [x] Passing arguments to event handlers
+- [x] Multiple arguments: product ID, name, price
+- [x] Event Handling + State mini-project
+- [x] Bootstrap UI integration
 
-**English:** Event Handling means responding to actions performed by the user in a React application, such as clicking, typing, or submitting a form.
+---
 
-**Hindi:** Event Handling ka matlab hai user ke actions ko handle karna, jaise button click, input mein typing, ya form submit.
+## 1. Event Handling
+
+**English:** Event Handling means responding to actions performed by the user in a React application, such as clicking, typing, mouse movement, or submitting a form.
+
+**Hindi/Hinglish:** Event Handling ka matlab user ke actions ko handle karna, jaise button click, input mein typing, mouse events, ya form submit.
 
 ```text
 User Action
@@ -30,157 +54,7 @@ Function
 UI / State changes
 ```
 
-### Code Example
-```jsx
-function handleClick() {
-    alert("Button clicked!");
-}
-
-function App() {
-    return <button onClick={handleClick}>Click Me</button>;
-}
-
-export default App;
-```
-
-### Real-World Example + Solution — Add to Cart
-```jsx
-import { useState } from "react";
-
-function Product() {
-    const [cartItems, setCartItems] = useState(0);
-
-    function addToCart() {
-        setCartItems(cartItems + 1);
-    }
-
-    return (
-        <div className="container mt-4">
-            <h2>iPhone</h2>
-            <button className="btn btn-primary" onClick={addToCart}>
-                Add to Cart
-            </button>
-            <p className="mt-2">Cart Items: {cartItems}</p>
-        </div>
-    );
-}
-
-export default Product;
-```
-
-### Hands-on Task + Solution
-Create a button that displays an alert when clicked.
-
-```jsx
-function App() {
-    function handleClick() {
-        alert("Successfully clicked!");
-    }
-
-    return (
-        <button className="btn btn-primary" onClick={handleClick}>
-            Click Me
-        </button>
-    );
-}
-
-export default App;
-```
-
----
-
-## 2. onClick
-
-**Definition:** `onClick` is a React event handler used to execute a function when a user clicks an element.
-
-### Code Example
-```jsx
-function handleClick() {
-    alert("Button clicked!");
-}
-
-function App() {
-    return <button onClick={handleClick}>Click Me</button>;
-}
-
-export default App;
-```
-
-### Real-World Example + Solution
-A shopping website uses `onClick` for Add to Cart.
-
-```jsx
-function addToCart() {
-    alert("Product added to cart");
-}
-
-<button onClick={addToCart}>Add to Cart</button>
-```
-
-### Hands-on Task + Solution
-Create a button that changes its message when clicked.
-
-```jsx
-import { useState } from "react";
-
-function App() {
-    const [message, setMessage] = useState("Click the button");
-
-    return (
-        <div>
-            <h2>{message}</h2>
-            <button onClick={() => setMessage("Button clicked!")}>
-                Click Me
-            </button>
-        </div>
-    );
-}
-
-export default App;
-```
-
----
-
-## 3. Inline Event Handler
-
-**Definition:** An inline event handler is an event function written directly inside JSX.
-
-### Code Example
-```jsx
-<button onClick={() => alert("Button is clicked")}>
-    Click Me
-</button>
-```
-
-### Real-World Example + Solution
-Small UI actions such as opening a menu can use an inline handler.
-
-```jsx
-<button onClick={() => alert("Menu opened")}>Menu</button>
-```
-
-### Hands-on Task + Solution
-Create an inline button that shows `Welcome to React`.
-
-```jsx
-function App() {
-    return (
-        <button onClick={() => alert("Welcome to React")}>
-            Welcome
-        </button>
-    );
-}
-
-export default App;
-```
-
----
-
-## 4. Event Handler Function
-
-**Definition:** A function that is executed when a React event occurs is called an event handler.
-
-### Code Example
+### Basic Syntax
 ```jsx
 function handleClick() {
     alert("Button clicked!");
@@ -189,56 +63,39 @@ function handleClick() {
 <button onClick={handleClick}>Click Me</button>
 ```
 
-### Real-World Example + Solution
-A logout button can call a dedicated `handleLogout` function.
+---
+
+## 2. onClick
+
+`onClick` executes a function when an element is clicked.
 
 ```jsx
-function handleLogout() {
-    alert("User logged out");
+function handleClick() {
+    alert("Button clicked!");
 }
 
-function App() {
-    return <button onClick={handleLogout}>Logout</button>;
-}
-
-export default App;
+<button onClick={handleClick}>Click Me</button>
 ```
 
-### Hands-on Task + Solution
-Create `handleClick()` and connect it to a button.
-
+### Inline Handler
 ```jsx
-function App() {
-    function handleClick() {
-        alert("Task completed");
-    }
-
-    return <button onClick={handleClick}>Complete Task</button>;
-}
-
-export default App;
+<button onClick={() => alert("Button is clicked")}>
+    Click Me
+</button>
 ```
 
 ### Important
-Correct:
 ```jsx
-onClick={handleClick}
+onClick={handleClick}     // correct: passes function
+onClick={handleClick()}   // usually wrong: calls during render
 ```
-
-Usually wrong for event registration:
-```jsx
-onClick={handleClick()}
-```
-
-`handleClick()` calls the function immediately during rendering instead of passing the function for the click event.
 
 ---
 
-## 5. Event Handling + useState
+## 3. Event Handling + useState
 
-**Definition:** An event can call a state setter to update component data and cause the UI to update.
+Events can update state, which causes React to update the UI.
 
-### Real-World Example + Solution — Like Button
 ```jsx
 import { useState } from "react";
 
@@ -255,34 +112,6 @@ function LikeButton() {
 export default LikeButton;
 ```
 
-### Hands-on Task + Solution — Like Button with 99+
-```jsx
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-function Task() {
-    const [likes, setLikes] = useState(0);
-
-    return (
-        <div className="p-4">
-            <button
-                type="button"
-                className="btn btn-primary position-relative"
-                onClick={() => setLikes(likes + 1)}
-            >
-                ❤️ Likes
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {likes > 99 ? "99+" : likes}
-                    <span className="visually-hidden">unread likes</span>
-                </span>
-            </button>
-        </div>
-    );
-}
-
-export default Task;
-```
-
 ### Real-world uses
 - Social media likes
 - Notification counts
@@ -291,85 +120,18 @@ export default Task;
 
 ---
 
-## 6. onChange
+## 4. onChange + Event Object
 
-**Definition:** `onChange` is a React event handler commonly used with inputs to respond when their value changes.
+**English:** `onChange` is commonly used with inputs to respond when their value changes.
 
-### Code Example
+**Hinglish:** User input mein kuch type/change karta hai to `onChange` trigger hota hai.
+
 ```jsx
 function handleChange(event) {
     console.log(event.target.value);
 }
 
-function App() {
-    return <input type="text" onChange={handleChange} />;
-}
-
-export default App;
-```
-
-### Real-World Example + Solution — Search Box
-```jsx
-import { useState } from "react";
-
-function SearchBox() {
-    const [search, setSearch] = useState("");
-
-    function handleSearch(event) {
-        setSearch(event.target.value);
-    }
-
-    return (
-        <div className="container mt-4">
-            <input
-                className="form-control"
-                type="text"
-                placeholder="Search jobs..."
-                onChange={handleSearch}
-            />
-            <p>Searching for: {search}</p>
-        </div>
-    );
-}
-
-export default SearchBox;
-```
-
-### Hands-on Task + Solution
-Create an input that prints the current text below it.
-
-```jsx
-import { useState } from "react";
-
-function App() {
-    const [text, setText] = useState("");
-
-    return (
-        <div>
-            <input
-                value={text}
-                onChange={(event) => setText(event.target.value)}
-                placeholder="Type something"
-            />
-            <h3>{text}</h3>
-        </div>
-    );
-}
-
-export default App;
-```
-
----
-
-## 7. Event Object
-
-**Definition:** The event object contains information about the event and the element that triggered it.
-
-### Code Example
-```jsx
-function handleChange(event) {
-    console.log(event);
-}
+<input type="text" onChange={handleChange} />
 ```
 
 Important properties:
@@ -378,126 +140,14 @@ event.target
 event.target.value
 ```
 
-### Real-World Example + Solution
-Read the value entered into a search input.
-
-```jsx
-function handleSearch(event) {
-    console.log("Search:", event.target.value);
-}
-
-function App() {
-    return <input onChange={handleSearch} placeholder="Search" />;
-}
-
-export default App;
-```
-
-### Hands-on Task + Solution
-Display the input value using the event object.
-
-```jsx
-import { useState } from "react";
-
-function App() {
-    const [value, setValue] = useState("");
-
-    function handleChange(event) {
-        setValue(event.target.value);
-    }
-
-    return (
-        <>
-            <input onChange={handleChange} />
-            <p>You typed: {value}</p>
-        </>
-    );
-}
-
-export default App;
-```
-
-- `event.target` → the element that triggered the event
-- `event.target.value` → the current value of an input
-
 ---
 
-## 8. onChange + useState
+## 5. Controlled Input
 
-### Real-World Example + Solution — Live Search
-```jsx
-import { useState } from "react";
+**English:** A controlled input is an input whose value is controlled by React state.
 
-function Search() {
-    const [query, setQuery] = useState("");
+**Hinglish:** Input ki value React state ke control mein hoti hai.
 
-    function handleChange(event) {
-        setQuery(event.target.value);
-    }
-
-    return (
-        <>
-            <input value={query} onChange={handleChange} />
-            <h3>Search: {query}</h3>
-        </>
-    );
-}
-
-export default Search;
-```
-
-### Hands-on Task + Solution — Live Name Input
-```jsx
-import { useState } from "react";
-
-function Task() {
-    const [name, setName] = useState("");
-
-    const handler = (event) => {
-        setName(event.target.value);
-    };
-
-    return (
-        <>
-            <p>Enter your Name</p>
-            <input
-                type="text"
-                value={name}
-                onChange={handler}
-                placeholder="Enter Your Name"
-            />
-            {name && <h1>Hello {name}</h1>}
-        </>
-    );
-}
-
-export default Task;
-```
-
-### Flow
-```text
-User types "Syed"
-        ↓
-onChange fires
-        ↓
-handler(event)
-        ↓
-event.target.value
-        ↓
-setName("Syed")
-        ↓
-React re-renders
-        ↓
-Hello Syed
-```
-
----
-
-## 9. Controlled Input
-
-**Definition:** A controlled input is a form input whose value is controlled by React state.
-
-### Real-World Example + Solution — Profile Name
 ```jsx
 import { useState } from "react";
 
@@ -516,159 +166,323 @@ function ProfileName() {
 export default ProfileName;
 ```
 
-### Hands-on Task + Solution
-Create a controlled email input.
-
-```jsx
-import { useState } from "react";
-
-function App() {
-    const [email, setEmail] = useState("");
-
-    return (
-        <div>
-            <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="Enter email"
-            />
-            <p>Email: {email}</p>
-        </div>
-    );
-}
-
-export default App;
-```
-
----
-
-## 10. Conditional UI with Event + State
-
-### Real-World Example + Solution
-Show a greeting only after the user enters a name.
-
-```jsx
-{name && <h1>Hello {name}</h1>}
-```
-
-### Hands-on Task + Solution
-Create a button that toggles a message.
-
-```jsx
-import { useState } from "react";
-
-function App() {
-    const [show, setShow] = useState(false);
-
-    return (
-        <div>
-            <button onClick={() => setShow(!show)}>
-                {show ? "Hide" : "Show"}
-            </button>
-
-            {show && <h2>Welcome to React!</h2>}
-        </div>
-    );
-}
-
-export default App;
-```
-
-This combines:
+Flow:
 ```text
-Event Handling + State + Conditional Rendering
+User types
+   ↓
+onChange
+   ↓
+event.target.value
+   ↓
+setName()
+   ↓
+React state updates
+   ↓
+UI updates
 ```
 
 ---
 
-## 11. Event Handling + State — Real-world example
+## 6. Mouse Events
 
-### Shopping Cart Solution
+Covered:
+- `onClick`
+- `onMouseEnter`
+- `onMouseLeave`
+- `onMouseOver`
+- `onMouseOut`
+- `onMouseDown`
+- `onMouseUp`
+- `onMouseMove`
+
+### Important concept
+Returning JSX from an event handler does **not** render that JSX into the component. For UI changes, use state.
+
 ```jsx
 import { useState } from "react";
 
-function ShoppingCart() {
-    const [cartItems, setCartItems] = useState(0);
+function MouseOver() {
+    const [message, setMessage] = useState("");
 
-    function addToCart() {
-        setCartItems(cartItems + 1);
+    function mouseOverEffect() {
+        setMessage("You just passed over the button!");
     }
 
     return (
-        <div className="container mt-4">
-            <h2>Product: iPhone</h2>
-            <h3>Price: ₹70,000</h3>
-            <button className="btn btn-primary" onClick={addToCart}>
-                Add to Cart
+        <>
+            <button onMouseOver={mouseOverEffect}>
+                Move Mouse Here
             </button>
-            <h2>Cart Items: {cartItems}</h2>
-        </div>
+            {message && <p>{message}</p>}
+        </>
     );
 }
 
-export default ShoppingCart;
-```
-
-### Hands-on Task + Solution — Cart Counter
-Add `Increase`, `Decrease` and `Reset` buttons to the cart count.
-
-```jsx
-import { useState } from "react";
-
-function CartCounter() {
-    const [items, setItems] = useState(0);
-
-    return (
-        <div className="container mt-4">
-            <h2>Cart Items: {items}</h2>
-
-            <button className="btn btn-success m-2" onClick={() => setItems(items + 1)}>
-                Increase
-            </button>
-
-            <button className="btn btn-danger m-2" onClick={() => setItems(items - 1)}>
-                Decrease
-            </button>
-
-            <button className="btn btn-secondary m-2" onClick={() => setItems(0)}>
-                Reset
-            </button>
-        </div>
-    );
-}
-
-export default CartCounter;
+export default MouseOver;
 ```
 
 ---
 
-## What we learned today
+## 7. onSubmit / Form Submission
 
-- [x] Event Handling definition
-- [x] `onClick`
-- [x] Event handler function
-- [x] Inline event handler
-- [x] `onClick={handleClick}` vs `onClick={handleClick()}`
-- [x] Event Handling + `useState`
-- [x] `onChange`
-- [x] Event object
-- [x] `event.target`
-- [x] `event.target.value`
-- [x] Controlled input
-- [x] Conditional UI based on state
-- [x] Like Counter hands-on + solution
-- [x] Live Name Input hands-on + solution
-- [x] Shopping Cart real-world example + solution
+**English:** `onSubmit` is used to handle a form submission in React.
 
-## Next Event Handling topics
-- `onSubmit`
-- Passing arguments to event handlers
-- Other useful React events
-- Event Handling mini-project
-- Final interview questions
+**Hinglish:** Jab user Login, Registration, Contact ya kisi form ko submit karta hai, `onSubmit` trigger hota hai.
 
-## Day 3 learning method
-**Concept → Definition → Syntax → Real-world example + solution → Hands-on task + solution → Mini-project → Interview → VS Code → Browser documentation → GitHub**
+### Basic Syntax
+```jsx
+function handleSubmit(event) {
+    event.preventDefault();
 
-Status: **Event Handling — In Progress**
+    console.log("Form submitted");
+}
+
+<form onSubmit={handleSubmit}>
+    <button type="submit">Submit</button>
+</form>
+```
+
+### `preventDefault()`
+```jsx
+event.preventDefault();
+```
+
+It prevents the browser's default form submission behavior, such as page reload, so React can handle the submission.
+
+### Controlled Login Form Pattern
+```jsx
+import { useState } from "react";
+
+function UserLogin() {
+    const [userName, setUserName] = useState("");
+    const [userPassword, setUserPassword] = useState("");
+    const [userEmail, setUserEmail] = useState("");
+
+    function onSubmit(event) {
+        event.preventDefault();
+
+        console.log("UserName:", userName);
+        console.log("UserPassword:", userPassword);
+        console.log("UserEmail:", userEmail);
+
+        setUserName("");
+        setUserPassword("");
+        setUserEmail("");
+    }
+
+    return (
+        <form onSubmit={onSubmit}>
+            <input
+                type="text"
+                value={userName}
+                placeholder="Enter Your Name"
+                onChange={(event) => setUserName(event.target.value)}
+            />
+
+            <input
+                type="password"
+                value={userPassword}
+                placeholder="Enter Your Password"
+                onChange={(event) => setUserPassword(event.target.value)}
+            />
+
+            <input
+                type="email"
+                value={userEmail}
+                placeholder="Enter Your Email"
+                onChange={(event) => setUserEmail(event.target.value)}
+            />
+
+            <button type="submit">Login</button>
+        </form>
+    );
+}
+
+export default UserLogin;
+```
+
+---
+
+## 8. Passing Arguments to Event Handlers
+
+**English:** We can pass additional information to an event handler using an arrow function.
+
+**Hinglish:** Click ke time product ID, name, price jaise extra data function ko pass kar sakte hain.
+
+### Correct Syntax
+```jsx
+function buyProduct(productName, price) {
+    console.log(productName, price);
+}
+
+<button onClick={() => buyProduct("iPhone", 90000)}>
+    Buy iPhone
+</button>
+```
+
+### Multiple Arguments
+```jsx
+<button onClick={() => buyProduct(101, "iPhone", 90000)}>
+    Buy iPhone
+</button>
+```
+
+### Argument + Event
+```jsx
+function handleClick(productName, event) {
+    console.log(productName);
+    console.log(event);
+}
+
+<button onClick={(event) => handleClick("iPhone", event)}>
+    Buy
+</button>
+```
+
+---
+
+## 9. Final Mini-Project — Product Order Form
+
+This project combines `useState`, controlled input, `onChange`, `onSubmit`, `preventDefault`, calculation, conditional rendering, and Bootstrap.
+
+```jsx
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+function Product() {
+    const [name] = useState("iPhone");
+    const [price] = useState(90000);
+    const [quantity, setQuantity] = useState(1);
+    const [selectedItems, setSelectedItems] = useState(null);
+
+    function onSubmit(event) {
+        event.preventDefault();
+
+        const computedTotal = Number(quantity) * price;
+
+        setSelectedItems({
+            name: name,
+            price: price,
+            quantity: Number(quantity),
+            total: computedTotal,
+        });
+    }
+
+    return (
+        <div className="container mt-5" style={{ maxWidth: "450px" }}>
+            <div className="card shadow-sm p-4 border-0 bg-light rounded-3">
+                <form onSubmit={onSubmit}>
+                    <h2 className="card-title h3 text-primary mb-2">{name}</h2>
+                    <h4 className="text-secondary mb-4">₹{price.toLocaleString()}</h4>
+
+                    <div className="mb-3">
+                        <label className="form-label fw-bold">Quantity:</label>
+                        <input
+                            type="number"
+                            min="1"
+                            className="form-control form-control-lg"
+                            value={quantity}
+                            onChange={(event) => setQuantity(event.target.value)}
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-primary btn-lg w-100 fw-bold">
+                        Add to Cart
+                    </button>
+                </form>
+
+                {selectedItems && (
+                    <div className="alert alert-success mt-4">
+                        <h5>Added Successfully ✅</h5>
+                        <p>Product: {selectedItems.name}</p>
+                        <p>Quantity: {selectedItems.quantity}</p>
+                        <p>Total: ₹{selectedItems.total.toLocaleString()}</p>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
+
+export default Product;
+```
+
+### Project flow
+```text
+Product
+  ↓
+Quantity input
+  ↓
+onChange
+  ↓
+State update
+  ↓
+Add to Cart
+  ↓
+onSubmit
+  ↓
+preventDefault()
+  ↓
+price × quantity
+  ↓
+setSelectedItems()
+  ↓
+Conditional Rendering
+  ↓
+Order summary
+```
+
+---
+
+## Interview Questions
+
+### Q1. What is event handling in React?
+**Answer:** Event handling means responding to user actions such as clicks, typing, mouse events, and form submission.
+
+### Q2. What is the difference between `onClick={handleClick}` and `onClick={handleClick()}`?
+**Answer:** `onClick={handleClick}` passes the function to React. `onClick={handleClick()}` calls it immediately during rendering.
+
+### Q3. What is `event.target.value`?
+**Answer:** It gives the current value of the input element that triggered the event.
+
+### Q4. Why use `event.preventDefault()` in forms?
+**Answer:** It prevents the browser's default form submission behavior, such as page reload, so React can handle the form submission.
+
+### Q5. What is a controlled input?
+**Answer:** A controlled input is an input whose value is managed by React state.
+
+### Q6. How do you pass arguments to an event handler?
+**Answer:** Use an arrow function, for example:
+```jsx
+onClick={() => buyProduct("iPhone", 90000)}
+```
+
+---
+
+## Day 3 Final Status
+
+**Event Handling — COMPLETED ✅**
+
+### GitHub / VS Code learning checkpoint
+```text
+React-Learning/
+└── daily-learning/
+    └── day-03.md
+```
+
+### Recommended Day 3 practice files
+```text
+Day-03/
+├── src/
+│   ├── 01-event-handling.jsx
+│   ├── 02-onclick.jsx
+│   ├── 03-onchange.jsx
+│   ├── 04-mouse-events.jsx
+│   ├── 05-onsubmit.jsx
+│   ├── 06-event-arguments.jsx
+│   ├── 07-product-order.jsx
+│   └── App.jsx
+```
+
+## Next
+**Day 3 interview revision → Day 4 / next React topic**
