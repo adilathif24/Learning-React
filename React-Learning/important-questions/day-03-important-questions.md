@@ -1,6 +1,6 @@
-# Day 3 — React Event Handling Interview Questions
+# Day 3 — React Event Handling + Workshop Interview Questions
 
-## Core Questions
+## Event Handling Questions
 
 ### 1. What is event handling in React?
 Event handling means responding to user actions such as clicks, typing, mouse events, and form submission.
@@ -49,7 +49,33 @@ function handleClick(productName, event) {
 </button>
 ```
 
+## Workshop Topics Learned Today
+
+### 11. How do you render API data in React?
+Fetch the API data, store or use the returned data in the component, and render it dynamically in the JSX UI.
+
+### 12. Why are search and filtering useful in a data-driven React UI?
+They help users find relevant records from a larger dataset instead of viewing every record.
+
+### 13. What is React Router?
+React Router is used to manage navigation between different routes/views in a React application.
+
+### 14. Why use routing in a React application?
+Routing lets an application display different components/views for different URLs while maintaining the React application flow.
+
+### 15. What is an SPA?
+SPA means Single Page Application. A React SPA can keep the application on one page while different components/views are loaded or updated as the user navigates.
+
+### 16. Explain the practical flow discussed in the workshop.
+A real application can fetch API data, render it dynamically, provide search and filtering, and use React Router to navigate between different views in an SPA.
+
 ## Practical Interview Scenario
+
+**Q: How would you build a Job Dashboard in React?**
+
+**Answer:** I would fetch job data from an API, render the jobs dynamically, add search and filtering for the job list, and use React Router for different views such as the job list and job details while keeping the application as a SPA.
+
+## Product Order Form Scenario
 
 **Q: How would you build a product order form in React?**
 
@@ -62,3 +88,7 @@ function handleClick(productName, event) {
 - Form Submission — Completed
 - Passing Arguments — Completed
 - Event Handling Mini-Project — Completed
+- API Data → UI practical flow — Learned
+- Search / Filtering practical flow — Learned
+- React Router practical concept — Learned
+- SPA concept — Learned
