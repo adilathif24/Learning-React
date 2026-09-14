@@ -27,13 +27,15 @@ React-Learning/
 For each React topic, I will maintain:
 
 - Definition
-- Hindi explanation
+- Hindi / Hinglish explanation
 - Concept explanation
 - Syntax
 - Examples
-- Practice
+- Real-world connection
+- Hands-on task with code
 - Important questions
 - Interview questions and answers
+- Common mistakes
 
 ## Progress
 
@@ -62,6 +64,112 @@ Completed topics include:
 Practice completed:
 
 - Student Profile own project
+
+### Day 2 — React Core Concepts
+
+Completed topics include:
+
+- Props
+- State
+- `useState`
+- Conditional rendering
+- Dynamic UI basics
+- Component data flow
+
+### Day 3 — Event Handling & Forms
+
+Completed topics include:
+
+- Event handling
+- `onClick`
+- Handler functions
+- Inline handlers
+- Event object
+- `onChange`
+- `event.target.value`
+- Controlled inputs
+- Conditional UI with state
+- `onSubmit`
+- Form handling
+- Passing arguments
+- Shopping cart / Like button / Live input practice
+
+### Day 4 — React Application Development Foundations
+
+Completed topics include:
+
+- Component organization
+- Reusable UI patterns
+- API/data-driven UI foundations
+- React application structure
+
+### Day 5 — React API Fetching + `useEffect`
+
+Completed topics include:
+
+- `useEffect`
+- Side effects
+- API calling with `fetch()`
+- `response.ok`
+- `response.json()`
+- Promise `.then()` flow
+- `.catch()` error handling
+- Loading state
+- Error state
+- Conditional rendering
+- Dynamic API data rendering
+- Bootstrap integration
+- Responsive Bootstrap cards
+
+Practice completed:
+
+- Weather Dashboard using React + Open-Meteo API
+
+### Day 6 — React Application Development: Components, Search, Dynamic UI & API Integration
+
+Completed topics include:
+
+- Component structure
+- Page / list / card responsibilities
+- Reusable components
+- Props-based reuse
+- Parent → Child communication
+- Function / callback as prop
+- Search and filtering
+- `filter()` + `map()` data flow
+- Search by name OR role
+- Empty search handling
+- No-results handling
+- Dynamic UI with state
+- Online / Offline status toggle
+- Dynamic button text
+- API integration
+- Loading / error / success UI states
+- `response.ok`
+- `response.json()`
+- `.catch()` and `.finally()`
+- Dynamic API rendering
+
+Practice completed:
+
+- Employee Search and Filtering
+- Online / Offline Status Toggle
+- Users API integration using JSONPlaceholder
+
+Daily documentation:
+
+- `React-Learning/daily-learning/day-06.md`
+
+## Current Phase 2 Progress
+
+- Component Structure — COMPLETED ✅
+- Reusable Components — COMPLETED ✅
+- Parent → Child Communication — COMPLETED ✅
+- Search & Filtering — COMPLETED ✅
+- Dynamic UI — COMPLETED ✅
+- API Integration — COMPLETED ✅
+- Responsive UI — NEXT ⏳
+- Tailwind CSS — PENDING ⏳
 
 ## Goal
 
