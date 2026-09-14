@@ -89,6 +89,57 @@ Day-2 roadmap:
 Day-2 daily record:
 `daily-learning/day-02.md`
 
-## Day 3
+## Day 3 — React Event Handling + Workshop Practical Flow ✓
 
-**Next:** Continue the React course sequence.
+**Status: COMPLETED — Event Handling + API/UI + Search/Filtering + React Router + SPA concepts**
+
+Completed/practiced:
+- Event Handling
+- `onClick`
+- Inline Event Handler
+- Event Handler Function
+- `onClick={handleClick}` vs `onClick={handleClick()}`
+- Event Handling + `useState`
+- `onChange`
+- Event Object
+- `event.target`
+- `event.target.value`
+- Controlled Input
+- Conditional UI with Event + State
+- Mouse Events
+- `onSubmit`
+- `event.preventDefault()`
+- Form submission with controlled inputs
+- Passing arguments to event handlers
+- Multiple arguments and event object
+- Product Order Form mini-project
+- Bootstrap UI integration
+- API data → UI practical flow from today's workshop
+- Search / Filtering practical flow from today's workshop
+- React Router practical concept from today's workshop
+- SPA — Single Page Application concept
+- Combined API → UI → Search/Filter → Router → SPA flow
+
+Practice/project:
+- Shopping Cart event + state example
+- Product Order Form mini-project
+- Job Dashboard architecture/use-case discussion
+
+Interview preparation:
+- Event Handling interview questions
+- API data rendering question
+- Search/filtering question
+- React Router question
+- SPA question
+- Job Dashboard practical scenario
+
+Day-3 daily record:
+`daily-learning/day-03.md`
+
+Important topic notes:
+- `important-topics/event-handling.md`
+- `important-topics/api-data-rendering.md`
+
+## Next Course Topic
+
+**Props as Children**
