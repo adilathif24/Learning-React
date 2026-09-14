@@ -1,9 +1,10 @@
-# Day 3 — React Event Handling
+# Day 3 — React Event Handling + Workshop Topics
 
-**Date: 12 September 2026**
+**Date: 14 September 2026**
 
 ## Progress
 ### Event Handling — COMPLETED ✅
+### React Workshop Practical Flow — LEARNED ✅
 
 ## Learning Method Used
 For every concept:
@@ -16,7 +17,7 @@ For every concept:
 7. VS Code practice
 8. GitHub documentation
 
-## Topics Completed
+## Topics Completed — Event Handling
 - [x] Event Handling
 - [x] `onClick`
 - [x] Inline Event Handler
@@ -38,7 +39,85 @@ For every concept:
 - [x] Event Handling + State mini-project
 - [x] Bootstrap UI integration
 
+## Today's Workshop Learning
+
+The workshop/practical discussion added the following real-world React flow:
+
+### 1. API Data → UI
+After fetching data from an API, the data can be rendered dynamically on the React UI.
+
+Flow:
+```text
+API
+ ↓
+Fetch data
+ ↓
+Store / use data
+ ↓
+Render data on UI
+```
+
+### 2. Searching and Filtering
+The fetched data can be searched and filtered so users can find relevant records instead of viewing the complete dataset.
+
+Flow:
+```text
+API Data
+ ↓
+Render list
+ ↓
+Search / Filter
+ ↓
+Show matching results
+```
+
+### 3. React Router
+For navigation between views in a React application, React Router can be used instead of normal anchor-based page navigation.
+
+Key idea:
+- Routes decide which component/view should be displayed.
+- Navigation changes the displayed view without requiring a traditional full-page navigation flow.
+
+### 4. SPA — Single Page Application
+A React SPA can keep the application on one page while different components/views are loaded or updated as the user navigates.
+
+Concept:
+```text
+One React Application
+        ↓
+Different Routes / Views
+        ↓
+Different Components Render
+```
+
+### 5. Practical Real-World Flow
+The workshop discussion connected these concepts into a practical application flow:
+
+```text
+API Fetching
+   ↓
+Dynamic Data Rendering
+   ↓
+Search / Filtering
+   ↓
+React Router
+   ↓
+SPA Navigation
+   ↓
+Real React Application
+```
+
 ## Real-World Example
+
+A Job Dashboard can use this same flow:
+- Fetch job data from an API.
+- Display jobs dynamically.
+- Search jobs by title or keyword.
+- Filter jobs by relevant criteria.
+- Use React Router for different views such as Jobs, Job Details, and About.
+- Keep the application as a SPA while changing views/components.
+
+## Event Handling Real-World Example
 
 Shopping Cart:
 
@@ -55,12 +134,11 @@ Cart Items: 2
 
 This demonstrates Event Handling + `useState` working together.
 
-## Mini Project
+## Mini Project — Product Order Form
 
-**Product Order Form** — combines `useState`, controlled inputs, `onChange`, `onSubmit`, `preventDefault`, calculation, conditional rendering, and Bootstrap.
+This combines `useState`, controlled inputs, `onChange`, `onSubmit`, `preventDefault`, calculation, conditional rendering, and Bootstrap.
 
 Flow:
-
 ```text
 Product
   ↓
@@ -99,15 +177,25 @@ Completed questions include:
 - How to pass arguments to event handlers?
 - How to pass custom arguments together with the event object?
 
+Workshop-related interview points learned today:
+- How do you render API data in React?
+- Why are search and filtering useful in a data-driven React UI?
+- What is React Router?
+- Why use routing in a React application?
+- What is an SPA?
+- How does API → UI → search/filter → routing fit together in a real application?
+
 ## GitHub Updates
 
-- `important-topics/event-handling.md` — topic notes added
-- `important-questions/day-03-important-questions.md` — interview questions maintained
-- `interview-preparation/day-03-react-event-handling.md` — interview preparation added
+- `important-topics/event-handling.md` — event handling notes
+- `important-topics/api-data-rendering.md` — API data rendering, search/filtering, Router and SPA notes
+- `important-questions/day-03-important-questions.md` — interview questions maintained and expanded
+- `interview-preparation/day-03-react-event-handling.md` — interview preparation and workshop flow added
+- `interview-preparation/day-03-workshop-practical-flow.md` — workshop practical interview preparation
 
 ## Status
 
-**Day 3 Event Handling — COMPLETED ✅**
+**Day 3 — Event Handling + Today's Workshop Learning — COMPLETED ✅**
 
 ## Next Topic
 
