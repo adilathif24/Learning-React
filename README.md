@@ -222,6 +222,38 @@ Interview documentation:
 
 - `React-Learning/interview-preparation/day-07-responsive-ui.md`
 
+### Day 8 — React Routing
+
+Completed topics include:
+
+- React Router DOM
+- `BrowserRouter`
+- `Routes`
+- `Route`
+- `Link`
+- `NavLink`
+- `useNavigate()`
+- Dynamic routes
+- `useParams()`
+- Route-based component rendering
+- Client-side / SPA navigation
+- Routing interview preparation
+- Situation-based routing questions
+- Common routing mistakes
+
+Practice completed:
+
+- Home route
+- Products route
+- About route
+- Dynamic product details route
+- Navbar with `NavLink`
+- Programmatic navigation with `useNavigate()`
+
+Daily documentation:
+
+- `React-Learning/daily-learning/day-08.md`
+
 ## Phase 2 Progress
 
 - Component Structure — COMPLETED ✅
@@ -233,18 +265,19 @@ Interview documentation:
 - Responsive UI — COMPLETED ✅
 - Tailwind CSS — SKIPPED / NOT CURRENTLY STUDYING ⏸️
 
-## Current Phase 3 — React Routing
+## Phase 3 — React Routing
 
-Currently learning:
+### Day 8 Progress
 
-- `BrowserRouter`
-- `Routes`
-- `Route`
-- `Link`
-- `NavLink`
-- `useNavigate()`
-- Route-based component rendering
-- Client-side navigation
+- `BrowserRouter` — COMPLETED ✅
+- `Routes` — COMPLETED ✅
+- `Route` — COMPLETED ✅
+- `Link` — COMPLETED ✅
+- `NavLink` — COMPLETED ✅
+- `useNavigate()` — COMPLETED ✅
+- Dynamic Routes — COMPLETED ✅
+- `useParams()` — COMPLETED ✅
+- SPA / Client-side Navigation — COMPLETED ✅
 
 ## Goal
 
